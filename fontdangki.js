@@ -111,12 +111,12 @@ jQuery(divpopup).attr('id', 'myModalthanh');
 jQuery(divpopup).attr('class', 'thanhfaceseo-modal');
 jQuery( "body" ).append(divpopup);
 var titleform='Đăng ký Form';
-var urlform="https://docs.google.com/forms/d/e/1FAIpQLSdk8c9saKSQdFMIbIOAW1C-M0Fzkne905Da3fixI4Elc9lvmg/viewform?usp=sf_link";
+var urlform="https://docs.google.com/forms/d/e/1FAIpQLSd4fLthGRxkRE1nBrKzQPZUws2Lva41JSCEbbA8P4mBDdNIdQ/viewform?usp=sf_link";
 var urlchuyen=window.location.href;
-var hovaten="1178375880";
-var dienthoai="1890605988";
-var email="1962020838";
-var sanpham="858836937";
+var hovaten="1221587907";
+var dienthoai="1510878271";
+var email="1611294984";
+var sanpham="905840446";
 var submittitle='Đăng ký tư vấn';
 var submittedform=false;
 var titleheader="ĐĂNG KÝ TƯ VẤN NHẬN ƯU ĐÃI";
@@ -124,12 +124,12 @@ var hotline="0981081897";
 var linkhientai=window.location.href;
 var thoigiancookie=1;
 var thoigianhien=10000;
-var formdiv='<div class="popup-body"><iframe id="hidden_iframethanh" name="hidden_iframethanh" onload="thanhxet()" style="display:none;"></iframe><div class="box-thanh-form"><div class="img"></div><div class="thanhform-level1"><h2><a class="close-thanhfaceseo-modal">X</a></h2></div><div id="cems-subscription" class="cems-subscription"><div class="sss-form-content thanhgform_wrapper"> <form class="form-hasBg" onsubmit="submittedform=true;" target="hidden_iframethanh" method="post" action="'+urlform+'"><div class="gform_body"><h2 class="form-title yellow-text-gradient">'+titleheader+'</h2><div class="description">					<p>Vui lòng điền chính xác các thông tin bên dưới để nhận tài liệu của dự án</p>				</div>     <ul class="thanhtop_label"> ';
+var formdiv='<div class="popup-body"><iframe id="hidden_iframethanh" name="hidden_iframethanh" onload="thanhxet()" style="display:none;"></iframe><div class="box-thanh-form"><div class="img"></div><div class="thanhform-level1"><h2><a class="close-thanhfaceseo-modal">X</a></h2></div><div id="cems-subscription" class="cems-subscription"><div class="sss-form-content thanhgform_wrapper"> <form class="form-hasBg" onsubmit="submittedform=true;" target="hidden_iframethanh" method="post" action="'+urlform+'"><div class="gform_body"><h2 class="form-title yellow-text-gradient">'+titleheader+'</h2><div class="description">					<p>Vui lòng điền chính xác các thông tin bên dưới để nhận tài liệu của sản phẩm</p>				</div>     <ul class="thanhtop_label"> ';
 formdiv+= '<li class="sss-form-control gfield ">  <div class="sss-form-control-inner">                               <div class="ginput_container">                  <input class="medium" name="entry.'+hovaten+'" maxlength="70" id="your_name" placeholder="Họ tên" value="" type="text">                </div>              </div>            </li> ';
 formdiv+= '<li class="sss-form-control gfield ">              <div class="sss-form-control-inner">                              <div class="ginput_container">                  <input class="medium" name="entry.'+email+'" maxlength="320" id="email_addr" placeholder="Email" value="" type="email"/>                </div>              </div>            </li> ';
 formdiv+= ' <li class="sss-form-control gfield ">              <div class="sss-form-control-inner">                                <div class="ginput_container">                  <input class="medium" name="entry.'+dienthoai+'" maxlength="15" id="your_phone" placeholder="Số điện thoại" value="" length="11" type="tel"/>                </div>              </div>            </li>';
 
-formdiv+= ' <li class="sss-form-control gfield thanhan">              <div class="sss-form-control-inner">                                <div class="ginput_container">                  <input class="medium" name="entry.'+duan+'" maxlength="15" id="your_phone" placeholder="Dự án" value="'+linkhientai+'" length="11" type="tel"/>                </div>              </div>            </li>';
+formdiv+= ' <li class="sss-form-control gfield thanhan">              <div class="sss-form-control-inner">                                <div class="ginput_container">                  <input class="medium" name="entry.'+sanpham+'" maxlength="15" id="your_phone" placeholder="Sản phẩm" value="'+linkhientai+'" length="11" type="tel"/>                </div>              </div>            </li>';
 
 
 formdiv+= '</ul>        </div>        <div class="gform_footer">          <div class="sss-form-control last" style="text-align:center;">            <input value="'+submittitle+'" type="submit"/>          </div> <span style="display:inline-block">HOTLINE:</span> <a href="tel:'+hotline+'" class="hotlinegoi" style="display:inline-block"> '+hotline+'</a>       </div>      </form>    </div>  </div></div></div>';
@@ -140,7 +140,7 @@ jQuery("#myModalthanh").html(formdiv);
 function thanhxet(){
 
 if(submittedform) {
-	window.location="https://hocvienfaceseo.com";
+	window.location="";
 	
 	 if(document.cookie.indexOf("adf") == -1)
                    {
