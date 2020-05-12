@@ -120,10 +120,9 @@ var duan="1247784825";
 var submittitle='Đăng ký tư vấn';
 var submittedform=false;
 var titleheader="ĐĂNG KÝ TƯ VẤN NHẬN ƯU ĐÃI";
-var hotline="0981081897";
+var hotline="098 1081 897";
 var linkhientai=window.location.href;
-var thoigiancookie=1;
-var thoigianhien=10000;
+var thoigianhien=30000;
 var formdiv='<div class="popup-body"><iframe id="hidden_iframethanh" name="hidden_iframethanh" onload="thanhxet()" style="display:none;"></iframe><div class="box-thanh-form"><div class="img"></div><div class="thanhform-level1"><h2><a class="close-thanhfaceseo-modal">X</a></h2></div><div id="cems-subscription" class="cems-subscription"><div class="sss-form-content thanhgform_wrapper"> <form class="form-hasBg" onsubmit="submittedform=true;" target="hidden_iframethanh" method="post" action="'+urlform+'"><div class="gform_body"><h2 class="form-title yellow-text-gradient">'+titleheader+'</h2><div class="description">					<p>Vui lòng điền chính xác các thông tin bên dưới để nhận tài liệu của dự án</p>				</div>     <ul class="thanhtop_label"> ';
 formdiv+= '<li class="sss-form-control gfield ">  <div class="sss-form-control-inner">                               <div class="ginput_container">                  <input class="medium" name="entry.'+hovaten+'" maxlength="70" id="your_name" placeholder="Họ tên" value="" type="text">                </div>              </div>            </li> ';
 formdiv+= '<li class="sss-form-control gfield ">              <div class="sss-form-control-inner">                              <div class="ginput_container">                  <input class="medium" name="entry.'+email+'" maxlength="320" id="email_addr" placeholder="Email" value="" type="email"/>                </div>              </div>            </li> ';
@@ -140,12 +139,16 @@ jQuery("#myModalthanh").html(formdiv);
 function thanhxet(){
 
 if(submittedform) {
-	window.location="https://hocvienfaceseo.com";
-	
-	 if(document.cookie.indexOf("adf") == -1)
-                   {
-                   setCookie('formdangky','dahien',thoigiancookie);
-                   }
+	window.location="https://faceseo.vn";
+var linkhientai=window.location;
+if(getCookie(linkhientai)){
+                	
+    }else{
+                   
+                    setCookie(linkhientai,'1',thoigianhien); 
+    }
+
+
 
      jQuery('#myModalthanh').css('display','none');				   
 	 jQuery('.thanhfaceseo-modal-bg').css('display','none');	
@@ -153,15 +156,33 @@ if(submittedform) {
 	}	
 }
 
+
+ function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + exdays);
+                var expires = "expires="+d.toUTCString();
+                document.cookie = cname + "=" + cvalue + "; " + expires;
+            }
+             
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0; i<ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1);
+                    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+                }
+                return "";
+            }
 		
 function showform(){
-	//alert(document.cookie.indexOf("dahien"));
-	if(document.cookie.indexOf("adf") == -1){
-		document.cookie = "adfpopunder1=adf";
-		   
-			jQuery('#myModalthanh').thanhfaceseo(jQuery('#myModalthanh').data());
-	}
+	var linkhientai=window.location;
+	if(getCookie(linkhientai)){
+                	
+    }else{
+                    jQuery('#myModalthanh').thanhfaceseo(jQuery('#myModalthanh').data());
+                    setCookie(linkhientai,'1',thoigianhien); 
+    }	
 }
-var action = setTimeout(function(){
-    showform();
-}, thoigianhien);
+
+var myVar=setInterval(function () {showform()}, 1000);
